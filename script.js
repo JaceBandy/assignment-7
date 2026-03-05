@@ -40,19 +40,39 @@ for (let i = 0; i < friendFavorites.length; i++) {
 // Print the array
 console.log("Foods with 'a' in the name:", foodsWithA);
 
+// 7 & 8. Separate foods by name length
+let longFoodNames = [];
+let shortFoodNames = [];
 
+for (let i = 0; i < friendFavorites.length; i++) {
+    let food = friendFavorites[i];
+    if (food.length > 6) {
+        longFoodNames.push(food);
+    } else {
+        shortFoodNames.push(food);
+    }
+}
 
-// 7. Create a new array longFoodNames for foods with names longer than 6 characters.
+// 9. Print both arrays
+console.log("Long food names (>6 chars):", longFoodNames);
+console.log("Short food names (≤6 chars):", shortFoodNames);
 
+// Compare lengths
+if (longFoodNames.length > shortFoodNames.length) {
+    console.log("There are more long-named foods.");
+} else if (shortFoodNames.length > longFoodNames.length) {
+    console.log("There are more short-named foods.");
+} else {
+    console.log("There is an equal number of long and short-named foods.");
+}
 
+// 10. STRETCH: Find the longest food name
+let longestFood = friendFavorites[0];
 
-// 8. Create another array shortFoodNames for foods 6 characters or shorter.
+for (let i = 1; i < friendFavorites.length; i++) {
+    if (friendFavorites[i].length > longestFood.length) {
+        longestFood = friendFavorites[i];
+    }
+}
 
-
-
-// 9. Print both arrays and compare:
-// "There are more long-named foods." OR "There are more short-named foods."
-
-
-// 10. STRETCH: Find the longest food name and print:
-// "The longest food name in the list is ______ with ___ characters."
+console.log(`The longest food name in the list is ${longestFood} with ${longestFood.length} characters.`);
