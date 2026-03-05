@@ -13,28 +13,32 @@ for (let i = 0; i < favoriteFoods.length; i++) {
     console.log(`My #${i + 1} favorite food is ${favoriteFoods[i]}.`);
 }
 
-// 4a. Create a function printFoodRecommendation(foodName) that prints out the following for the foodName provided
-    // "Have you ever tried ____?"
-    // "I always recommend ____ to friends."
-    // "Trust me — ____ is delicious."
-
-
-
+// 4a. Create a function printFoodRecommendation(foodName)
+function printFoodRecommendation(foodName) {
+    console.log(`Have you ever tried ${foodName}?`);
+    console.log(`I always recommend ${foodName} to friends.`);
+    console.log(`Trust me — ${foodName} is delicious.`);
+    console.log(''); // Adds a blank line for readability
+}
 
 // 4b. Call the function at least 3 times
+printFoodRecommendation("Ramen");
+printFoodRecommendation("Sushi");
+printFoodRecommendation("Tacos");
 
+// 5 & 6. Print out only foods that have an "a" in the name and store them in an array
+let foodsWithA = [];
 
+for (let i = 0; i < friendFavorites.length; i++) {
+    let food = friendFavorites[i];
+    // Check if the food name contains 'a' (case-insensitive)
+    if (food.toLowerCase().includes('a')) {
+        foodsWithA.push(food);
+    }
+}
 
-// Here's a list of 50 friends' favorite foods:
-let friendFavorites = [
-    "Pizza", "Sushi", "Pasta", "Falafel", "Burgers", "Ramen", "Pad Thai", "Curry", "Pho", "Nachos", "Gnocchi", "Donuts", "Steak", "Lasagna", "Biryani", "Tacos", "Croissant", "Churros", "Fried Rice", "Shawarma", "Miso Soup", "BBQ Ribs", "Hotpot", "Enchiladas", "Baklava", "Gyros", "Hummus", "Empanadas", "Pancakes", "Muffins", "Samosas", "Macarons", "Quiche", "Pierogi", "Arepas", "Okonomiyaki", "Ceviche", "Brisket", "Bao Buns", "Poutine", "Clam Chowder", "Fajitas", "Canelé", "Kimchi", "Tamales", "Omelette", "Biscuits", "Tempura", "Spring Rolls", "Crepes"
-  ];
-
-// 5. Print out only foods that have an "a" in the name. For example, "Pizza" would not be included, but "Donuts" would be.
-
-
-
-// 6. Store the result in an array called foodsWithA. Print out the array.
+// Print the array
+console.log("Foods with 'a' in the name:", foodsWithA);
 
 
 
